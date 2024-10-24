@@ -21,8 +21,8 @@ The SQL files are stored in a directory structure that mimics this pipeline:
 
 ## Usage
 
-python3 main.py dependencies <sql_directory>
-python3 main.py run <sql_directory>
+- python3 main.py dependencies <sql_directory>
+- python3 main.py run <sql_directory>
 
 ### Prerequisites
 
