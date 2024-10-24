@@ -26,6 +26,7 @@ def process(directory):
 
     return dependencies
 
+#sorting dependencies using topological sort
 def sortDependencies(dependencies):
     inDegree = {file: 0 for file in dependencies}
     for deps in dependencies.values():
@@ -48,9 +49,9 @@ def sortDependencies(dependencies):
 
     return sortedFile
 
-
+#simulate the execution of the file using 2 second
 def simulate(file):
-    time.sleep(2)  # Simulate running the SQL file
+    time.sleep(2)  
     print(f"Executed: {file}")
 
 
@@ -90,14 +91,7 @@ Example:
         )
     )
 
-VALID_CMDS = {
-    "dependencies" : lambda: getDependencies,
-    "run" : lambda: run
-}
 
-
-
-# Map commands to functions
 VALID_CMDS = {
     "dependencies": getDependencies,
     "run": run
@@ -120,7 +114,6 @@ def main():
         print_help()
         return
 
-    # Call the correct function with the directory argument
     VALID_CMDS[cmd](directory)
 
 if __name__ == '__main__':
